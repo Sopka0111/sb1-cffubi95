@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .widget-container {
+    @apply bg-white rounded-lg shadow-sm overflow-hidden flex flex-col;
+    height: 296.33px;
+  }
+
+  .widget-header {
+    @apply p-2.5 border-b border-gray-100 flex-shrink-0;
+  }
+
+  .widget-content {
+    @apply p-2.5 flex-1 overflow-hidden;
+  }
+
+  .metric-row {
+    @apply flex items-start justify-between py-0.5;
+  }
+
+  .metric-icon {
+    @apply w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0;
+  }
+
+  .metric-content {
+    @apply flex-1 min-w-0 mx-2;
+  }
+
+  .metric-value {
+    @apply text-base font-bold text-gray-900 truncate;
+  }
+
+  .metric-label {
+    @apply text-sm text-gray-700 truncate leading-snug;
+  }
+
+  .metric-subtext {
+    @apply text-xs text-gray-500 truncate leading-snug;
+  }
+
+  .sparkline-container {
+    @apply w-32 h-10 flex-shrink-0;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% center }
+  100% { background-position: 200% center }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out;
+}
